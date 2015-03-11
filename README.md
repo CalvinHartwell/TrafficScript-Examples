@@ -1,4 +1,4 @@
-# TrafficScript Script Examples for the Brocade / Riverbed Traffic Manager
+# TrafficScript Examples for the Brocade / Riverbed Traffic Manager
 
 Example TrafficScript scripts for the Brocade Steelapp load balancer. 
 
