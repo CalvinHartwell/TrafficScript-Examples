@@ -1,10 +1,10 @@
-# TrafficScript Examples for the Brocade / Riverbed Traffic Manager
+# TrafficScript Examples for the Brocade Steelapp
 
 Example TrafficScript scripts for the Brocade Steelapp load balancer. 
 
 The load balancer has gone under many different names, such as stingray, zeus and zxtm. 
 
-The TrafficManager/Zeus/ZXTM/SteelApp was formerly sold by Riverbed until 2014. 
+The TrafficManager or Zeus or ZXTM or Stingray or SteelApp was formerly sold by Riverbed until 2014. 
 
 Please feel free to use the TrafficScript examples here, there is a lack of resource for this scripting language.
 
