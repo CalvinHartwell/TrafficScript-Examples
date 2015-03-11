@@ -1,0 +1,16 @@
+# x-forwarded-for is a special http header: http://en.wikipedia.org/wiki/X-Forwarded-For	
+# This script is not required to enable x-forwarded-for, it is an option in:
+# services -> virtual server -> connection management -> http specific options 
+
+# Check if connection is HTTPS (SSL) - may not need this if already terminated or using HTTP traffic
+if(ssl.isSSL())
+{ 
+   # Get the Client's Remote IP Address
+   $ClientRemoteIPAddress = request.getRemoteIP();
+    
+   # Log the IP for testing
+   log.info( "Client Remote IP Address: ". $ClientRemoteIPAddress);
+   
+   # Add the IP as a HTTP Header
+   http.setResponseHeader( "X-Forwarded-For", $ClientRemoteIPAddress );  
+}

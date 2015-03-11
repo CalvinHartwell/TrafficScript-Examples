@@ -1,0 +1,16 @@
+# Some devices (ip phones / spider phones) will present their mac address as their SSL client certificate common name. 
+# Using traffic script, we pick up the common name from the certificate and forward it to the back-end server pool as an additional HTTP header. 
+# Note that anything logged by the log function will be in the system log - very useful for debugging. 
+
+# Ensure that an SSL connection has been established
+if(ssl.isSSL())
+{  
+  # Get the Certificate Common Name 
+  $ClientCertCommonName = ssl.clientCertCommonName();
+   
+  # Log the cert name for testing
+  log.info( "Certificate common name: ". $ClientCertCommonName);
+  
+  # Add the cert name as a HTTP Header
+  http.addHeader( "PhoneMacAddress", $ClientCertCommonName );  
+}

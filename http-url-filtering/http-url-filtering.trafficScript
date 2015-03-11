@@ -1,0 +1,16 @@
+# The steelapp load balancer can be used to provide some security to an application.
+# This particular example will only allow certain requests to pass through, to the white listed url paths.
+# The regular expression will look for http://domain/blog/ or http://domain/website1/ or http://domain/website1/
+# If the request matches the expression, it will be allowed, anything else will respond with a 404. 
+
+# Get the URL from the current HTTP Request
+$IncomingRequestUrl = http.getPath(); 
+
+# Whitelist of URL paths for the service (dev and prod)
+if((string.regexmatch($IncomingRequestURL, '^\/blog\/*', 'i') == 0) && 
+   (string.regexmatch($IncomingRequestURL, '^\/javascript\/*', 'i') == 0) && 
+   (string.regexmatch($IncomingRequestURL, '^\/assets\/*', 'i') == 0))
+{  
+  # Redirect or discard connection 
+  connection.close( "404 - Error: Page Not Found.\r\n" ); 
+}
