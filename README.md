@@ -1,4 +1,4 @@
-# TrafficScript Examples for the Brocade Steelapp
+# TrafficScript Examples for Brocade Steelapp
 
 Example TrafficScript scripts for the Brocade Steelapp load balancer. 
 
